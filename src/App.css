@@ -1,0 +1,1077 @@
+/*--------------------------------------------------------------------------------------------------*/
+/*Debug Outline:*/
+
+* {
+	/* outline-style: solid;
+	outline-width: 0.1vh;
+	outline-color: rgba(255, 0, 0, 0.5); */
+	
+	font-family: helvetica;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+/*Color Stuff:*/
+ /* maybe colors hier festlegen und dann auf seite anwenden -> einfacher global zu ändern*/
+
+/*--------------------------------------------------------------------------------------------------*/
+/*Header Stuff:*/
+
+header, footer {
+	background: rgb(255, 255, 255);
+	padding: 0.5em;
+
+	max-width: 100%;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: fit-content;
+}
+
+header nav {
+	align-content: space-between;
+	height: 7em;
+}
+
+#headerlogo{
+	max-height: 7em;
+}
+
+#backbutton{	
+	width: 15%;
+}
+
+footer {
+	margin-top: 0.5em;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+/*Homepage Stuff:*/
+
+.homepage {
+	text-align: center;
+	background: #65749F;
+	padding: 1em;
+	height: 75%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+}
+
+.homepage * {
+	margin: 1em;
+}
+
+.homepage div:not(.bird_picker) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.user_avatar {
+	width: 5em;
+	height: 5em;
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	border: 4px solid #E08631;
+}
+
+.homepage input {
+	padding: 0.25em;
+	padding-left: 0.5em;
+	font-size: 1.5em;
+	border-radius: 25pt;
+	border: 2px solid #E08631;
+	box-shadow: 0.25em 0.25em 0.25em rgba(100, 100, 100, 0.3) inset, -0.25em -0.25em 0.25em rgba(255, 255, 255, 0.3) inset;
+}
+
+.homepage p {
+	/* color: rgba(25, 25, 25, 1); */
+	color:#FFFFFF;
+	font-size: 1.5em;
+	margin: 0.5em;
+}
+
+.homepage button {
+	background: rgba(244, 244, 244, 1);
+	padding: 2em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	border-radius: 10pt;
+	border-style: none;
+	background-color: #E08631;
+	color: rgb(255, 255, 255);
+
+	font-size: 3em;
+	margin: 0.5em;
+/*Jetzt brauchen wir kein Kommentar mehr witzbold hahahahahahahhahahahahahahhahahahaha und das speicherst du jetzt bitte*/
+	box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25); 
+}
+
+.homepage button:hover {
+	transform: scale(1.05);
+	transition: transform .3s;
+}
+
+.homepage button:active {
+	transform: scale(1);
+	transition: transform .2s;
+	background: rgba(243, 243, 243, 1);
+	color: rgba(120, 60, 164, 1);
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.1) inset, -0.5em -0.5em 0.5em rgba(255, 255, 255, 0.1) inset;
+}
+
+/* Pop Up Stuff ---------------------------------------------------------------------- */
+
+.bird_picker {
+	position: absolute;
+	top: 9.5%;
+	right: 18%;
+	
+	text-align: center;
+	background-color: #E08631;
+	/* background: rgba(200, 200, 200, 1); */
+	padding: 1em;
+	border-radius: 15pt;
+
+	height: 50%;
+	
+	overflow-y: scroll;
+
+}
+
+.bird_picker ul {
+	list-style: none;
+	padding: 0em;
+	margin: 0em;
+
+	display: flex;
+	flex-direction: row;
+}
+
+.bird_picker ul li {
+	margin: 0em;
+}
+
+.bird_picker ul li img {
+	margin: 0.3em;
+	width: 5em;
+	height: 5em;
+	border-radius: 50%;
+	background-color: rgba(255, 255, 255, 1);
+	box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.25);
+	/* box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.25), -0.5em -0.5em 0.5em rgba(255, 255, 255, 0.25); */
+}
+
+.bird_picker ul li img:hover {
+	transform: scale(1.1);
+	transition: transform .3s;
+}
+
+.bird_picker ul li img:active {
+	transform: scale(1);
+	transition: transform .2s;
+	background: rgba(243, 243, 243, 1);
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.1) inset, -0.5em -0.5em 0.5em rgba(255, 255, 255, 0.1) inset;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+
+.boxybox p {
+	font-size: 10em;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+/* LOBBY STUFF */
+
+.private_room_host {
+	background-color: #65749F;
+	display: grid;
+	grid-template-columns: [line1] 20% [line2] 80%;	
+}
+
+.guide {
+	background-color: #E08631;
+	padding-left: 1em;
+	padding-right: 1em;
+	color:rgb(255, 255, 255);
+}
+
+.gameList {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+	list-style: none;
+	margin-right: 3%;
+	
+}
+.gameList li {	
+	box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25);
+}
+
+.gameList li:hover {
+	transform: scale(1.05);
+	transition: transform .3s;
+}
+.gameCard {
+	background-color: #E08631;
+	border: 4px solid #E08631;
+	width: 20em;
+	height: 16em;
+	margin: 1%;
+	border-radius: 5%;
+	z-index: 1;
+	
+	margin-bottom: 4%;
+}
+
+.gameCardHeader{
+	display: grid;
+	grid-template-columns: [line1] 20% [line2] 80%;	
+	background-color: #E08631;
+	
+	border: 6px solid #E08631;
+	/* border-top-left-radius: 5%;
+	border-top-right-radius: 5%; */
+	align-items: center;	
+}
+
+.gameCardHeader img {
+	width: 4em;
+	height: 4em;
+	border-radius: 10%;
+	background-color: #FFFFFF;
+	/* border: 4px solid #E08631; */
+
+}
+
+.gameCardHeader h4 {
+	margin-left: 0.5em;
+	margin-top: 0.1em;
+	margin-bottom: 0.1em;
+	font-size: 1.5em;
+	color:#FFFFFF;
+}
+
+.gameCard p {
+	margin-top: 0.1em;
+	font-size: 1.3em;
+	line-height: 1.5em;
+	padding: 10px;
+    padding-bottom: 25px;
+	/* border-radius: 5pt; */
+	border-bottom-right-radius: 10pt;
+	border-bottom-left-radius: 10pt;
+	background-color: #FFFFFF;
+	height: 6.9em;
+}
+
+.gameCardOverlay {
+    position: absolute;
+    z-index: 1000;
+    width: 20em;
+	height: 15em;
+}
+
+.lobbyTop {
+	/* display: flex;
+	justify-content: space-between */
+	display: grid;
+	grid-template-columns: 20% 40% 40%;	
+}
+
+.allUsers_inLobby {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	list-style-type: none;
+}
+
+.headline_question {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	list-style-type: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.headline_question h5 {
+	padding-right: 1em;
+	padding-top: 0em;
+	padding-bottom: 0.25em;
+}
+
+.user_inLobby {
+	background-color: #FFFFFF;
+	border: 4px solid #E08631;
+	margin-right: 2em;
+	margin-bottom: 1.3em;
+	display: flex;
+	max-width: fit-content;
+	height: 4em;
+
+	align-items: center;
+	align-content: flex-start;
+	
+	border-radius: 50px 10px 10px 50px;
+	border-left: none;
+
+}
+
+.user_inLobby_voted {
+    background-color: #FFFFFF;
+    border: 4px solid #4287f5;
+    margin-right: 2em;
+    margin-bottom: 1.3em;
+    display: flex;
+    max-width: fit-content;
+    height: 4em;
+
+    align-items: center;
+    align-content: flex-start;
+    
+    border-radius: 50px 10px 10px 50px;
+    border-left: none;
+
+}
+
+.user_inLobby p, .user_inLobby_voted p {
+	padding: 0.5em;
+	margin: 0em;
+	text-align: center;
+	font-size: 1.5em;
+	font-style: bold;
+	width: fit-content;
+	min-width: 5em; 
+	color: black;
+	/* min-width: 2.5em; */
+}
+
+.user_inLobby img {
+	width: 4em;
+	height: 4em;
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	border: 4px solid #E08631;
+}
+
+.user_inLobby_voted img {
+	width: 4em;
+	height: 4em;
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	border: 4px solid #4287f5;
+}
+
+.lobbyTop button {
+	background: rgba(244, 244, 244, 1);
+	padding: 2em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	border-radius: 10px;
+	border-style: none;
+	background-color: #E08631;
+	color: rgb(255, 255, 255);
+
+	font-size: 2em;
+	margin: 0.5em;
+	box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25);
+}
+
+.lobbyTop button:hover {
+	transform: scale(1.05);
+	transition: transform .3s;
+}
+
+.lobbyTop button:active {
+	transform: scale(1);
+	transition: transform .2s;
+	background: rgba(243, 243, 243, 1);
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.1) inset, -0.5em -0.5em 0.5em rgba(255, 255, 255, 0.1) inset;
+}
+
+.lobbyTop p:not(.roomcode) {
+	color: rgb(255, 255, 255);
+	font-size: 2em;
+	justify-content: space-around;
+}
+
+.roomcode {	
+	padding: 0.1em;
+	margin: 0.1em;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	font-size: 3.5em;
+}
+
+/* GAME PAGE */
+
+.game_page {
+	background-color: #65749F;
+	display: grid;
+	max-width: 100%;
+	grid-template-columns: [line1] 20% [line2] 80%;	
+}
+
+.game_top_constant h4 {
+	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+	margin-left: 0.5em;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	font-size: 3em;
+
+	/* text-align: center; */
+}
+
+/* .game_content {
+
+} */
+
+/* PYP PAGE */
+
+.pyp_page {	
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+}
+
+.pyp_page h5 {
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
+	font-size: 2em;
+
+	text-align: center;	
+}
+
+.pyp_page .allUsers_inLobby .user_inLobby {
+	background-color: #FFFFFF;
+	border: 3px solid #E08631;
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+	display: flex;
+	max-width: fit-content;
+	max-height: 3em;
+
+	align-items: center;
+	align-content: flex-start;
+	
+	border-radius: 50px 10px 10px 50px;
+	border-left: none;
+
+}
+
+.pyp_page .allUsers_inLobby .user_inLobby_voted {
+    background-color: #FFFFFF;
+    border: 3px solid #4287f5;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+    display: flex;
+    max-width: fit-content;
+    max-height: 3em;
+
+    align-items: center;
+    align-content: flex-start;
+    
+    border-radius: 50px 10px 10px 50px;
+    border-left: none;
+
+}
+
+.pyp_page .allUsers_inLobby .user_inLobby p, .pyp_page .allUsers_inLobby .user_inLobby_voted p {
+	padding: 0.6em;
+	margin: 0em;
+	text-align: center;
+	font-size: 1.3em;
+	font-style: bold;
+	width: fit-content;
+	min-width: 3.5em; 
+	color: black;
+	/* min-width: 2.5em; */
+}
+
+.pyp_page .allUsers_inLobby .user_inLobby img {
+	width: 3em;
+	height: 3em;
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	border: 3px solid #E08631;
+}
+
+.pyp_page .allUsers_inLobby .user_inLobby_voted img {
+	width: 3em;
+	height: 3em;
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	border: 3px solid #4287f5;
+}
+
+.bird_cursor {
+	z-index: 3;
+	pointer-events: none;
+	width: 4em;
+	height: auto;
+	position: absolute;
+}
+
+.choices {	
+	display: flex;
+	flex-direction: row nowrap;
+	justify-content: space-evenly;
+}
+
+.pyp_choice {
+	background: rgba(244, 244, 244, 1);
+	padding: 2em;
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	border-radius: 10px;
+	border-style: none;
+	background-color: #E08631;
+	color: rgb(255, 255, 255);
+
+	width: 35%;
+	height: 6em;
+
+	font-size: 1.5em;
+	margin: 0.5em;
+
+	margin-top: 0.1em;
+	margin-bottom: 1em; 
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25);
+
+}
+
+.pyp_choice:hover {
+	transform: scale(1.05);
+	transition: transform .3s;
+}
+
+.pyp_choice:active {
+	transform: scale(1);
+	transition: transform .2s;
+	background: rgba(243, 243, 243, 1);
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.1) inset, -0.5em -0.5em 0.5em rgba(255, 255, 255, 0.1) inset;
+}
+
+/* stinky */
+
+.pyp_round_over_pop {
+	position: absolute;
+	z-index: 2;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	top: 25%;
+	left: 33%;
+	
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	/* background-color: #E08631; */
+	/* background: rgba(200, 200, 200, 1); */
+	padding: 1em;
+	border-radius: 15pt;
+
+	height: 50%;
+	width: 50%;
+}
+
+
+.pyp_round_over_pop button {
+	background: rgba(244, 244, 244, 1);
+	
+	padding: 0.5em;
+	border-radius: 10pt;
+	border-style: none;
+	background-color: #E08631;
+	color: rgb(255, 255, 255);
+
+	font-size: 1.5em;
+	margin: 0.5em;
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25); 
+}
+
+.pyp_round_over_pop button:hover {
+	transform: scale(1.05);
+	transition: transform .3s;
+}
+
+.pyp_round_over_pop button:active {
+	transform: scale(1);
+	transition: transform .2s;
+	background: rgba(243, 243, 243, 1);
+	color: rgba(120, 60, 164, 1);
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.1) inset, -0.5em -0.5em 0.5em rgba(255, 255, 255, 0.1) inset;
+}
+/* Spotlight */
+
+/* literal spotlight: */
+.spotlight {
+    z-index: 1;
+	pointer-events: none;
+	position: absolute;
+    top: 8em;
+	left: 20%;
+	width: 100%;
+    background-image: radial-gradient(
+        circle,
+        transparent 160px,
+        rgba(0, 0, 0, 0.85) 200px
+    );
+}
+
+.sl_page {	
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.sl_page h5 {
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	font-size: 2.5em;
+
+	text-align: center;	
+}
+
+/* .pyp_page .allUsers_inLobby .user_inLobby {
+	background-color: #FFFFFF;
+	border: 3px solid #E08631;
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+	display: flex;
+	max-width: fit-content;
+	max-height: 3em;
+
+	align-items: center;
+	align-content: flex-start;
+	
+	border-radius: 50px 10px 10px 50px;
+	border-left: none;
+
+}
+
+.pyp_page .allUsers_inLobby .user_inLobby_voted {
+    background-color: #FFFFFF;
+    border: 3px solid #4287f5;
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
+    display: flex;
+    max-width: fit-content;
+    max-height: 3em;
+
+    align-items: center;
+    align-content: flex-start;
+    
+    border-radius: 50px 10px 10px 50px;
+    border-left: none;
+
+}
+
+.pyp_page .allUsers_inLobby .user_inLobby p, .pyp_page .allUsers_inLobby .user_inLobby_voted p {
+	padding: 0.6em;
+	margin: 0em;
+	text-align: center;
+	font-size: 1.3em;
+	font-style: bold;
+	width: fit-content;
+	min-width: 3.5em; 
+	color: black;
+}
+
+.pyp_page .allUsers_inLobby .user_inLobby img {
+	width: 3em;
+	height: 3em;
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	border: 3px solid #E08631;
+}
+
+.pyp_page .allUsers_inLobby .user_inLobby_voted img {
+	width: 3em;
+	height: 3em;
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	border: 3px solid #4287f5;
+} */
+
+.sl_page .allUsers_inLobby .user_inLobby,
+.sl_page .allUsers_inLobby .user_inLobby_voted {
+	box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25);
+}
+
+.sl_page .allUsers_inLobby .user_inLobby:hover,
+.sl_page .allUsers_inLobby .user_inLobby_voted:hover{
+	transform: scale(1.05);
+	transition: transform .3s;
+}
+
+.sl_page .allUsers_inLobby .user_inLobby:active, 
+.sl_page .allUsers_inLobby .user_inLobby_voted:active{
+	transform: scale(1);
+	transition: transform .2s;
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.1) inset, -0.5em -0.5em 0.5em rgba(255, 255, 255, 0.1) inset;
+}
+
+.statement {
+	background: rgba(244, 244, 244, 1);
+	border-radius: 10px;
+	border-style: none;
+	background-color: #E08631;
+	color: rgb(255, 255, 255);
+
+	/* display: flex;
+	align-items: center;
+	text-align: center; */
+
+	width: fit-content;
+	height: fit-content;
+	max-width: 60%;
+	min-width: 40em;
+
+	margin: 0.5em;
+	margin-top: 0.1em;
+	margin-bottom: 1em; 
+
+}
+
+.sl_choice {
+	font-size: 2em;
+	padding: 0.5em;
+	padding-left: 1em;
+	padding-right: 1em;
+	text-align: center;
+}
+
+.sl_round_over_pop {
+	position: absolute;
+	z-index: 2;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	top: 25%;
+	left: 33%;
+	
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.7);
+	/* background-color: #E08631; */
+	/* background: rgba(200, 200, 200, 1); */
+	padding: 1em;
+	border-radius: 15pt;
+
+	height: 50%;
+	width: 50%;
+}
+
+
+.sl_round_over_pop button {
+	background: rgba(244, 244, 244, 1);
+	
+	padding: 0.5em;
+	border-radius: 10pt;
+	border-style: none;
+	background-color: #E08631;
+	color: rgb(255, 255, 255);
+
+	font-size: 1.5em;
+	margin: 0.5em;
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25); 
+}
+
+.sl_round_over_pop button:hover {
+	transform: scale(1.05);
+	transition: transform .3s;
+}
+
+.sl_round_over_pop button:active {
+	transform: scale(1);
+	transition: transform .2s;
+	background: rgba(243, 243, 243, 1);
+	color: rgba(120, 60, 164, 1);
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.1) inset, -0.5em -0.5em 0.5em rgba(255, 255, 255, 0.1) inset;
+}
+
+
+/* GAME END PAGE */
+.game_end_top {
+	display:flex;
+	flex-direction: row nowrap;
+	justify-content: space-between;
+	margin-top: 2em;
+	
+}
+
+.game_end_top p{
+	margin-left: 1em;
+	margin-top: 0em;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	font-size: 3em;
+	margin-bottom: 0.3em;
+}
+
+/*.game_end_top img{
+	width: 3em;
+}*/
+
+.end_page_content{
+	display: grid;
+	grid-template-columns: [line1] 85% [line2] 15%;	
+	height: 80%;
+}
+
+.end_top_three{
+	
+}
+
+.winnerCont{
+	display: flex;
+	justify-content: center;
+}
+
+.winner {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.place_user {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.place {
+	margin-left: 0em;
+	margin-right: 0.3em;
+	margin-top: 0em;
+	margin-bottom: 0.2em;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	font-size: 3em;
+}
+
+.place_user div {
+	margin-right: 0em;
+	margin-bottom: 0.6em;
+}
+
+
+.second_third{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+.second_third .place {
+	font-size: 2.3em;
+	margin-bottom: 0em;
+}
+.second_third .points{
+	font-size: 1.5em;
+	margin-top: 0.2em;
+	margin-bottom: 0.5em;
+}
+
+.second_third .user_inLobby{
+	margin-bottom: 0em;
+	margin-right: 0.5em;
+
+	border: 3.5px solid #E08631;
+	max-height: 3.5em;
+
+	border-radius: 50px 10px 10px 50px;
+	border-left: none;
+}
+
+.second_third .user_inLobby p{
+	font-size: 1em;
+	min-width: 4em; 
+}
+
+.second_third .user_inLobby img{ 
+	width: 3.5em;
+	height: 3.5em;
+	border-radius: 50%;
+	border: 3.5px solid #E08631;
+}
+
+.second {	
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin-right: 1em;
+}
+
+.third {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin-left: 1em;
+}
+
+.end_users {
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	height: 8em;
+	margin-right: 5%;
+	margin-left: 3.5%;
+}
+
+.end_users .allUsers_inLobby {
+	z-index: 0;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	overflow-x: scroll;
+	width: 100%;
+
+	border-style: solid;
+	border-color: #ABA498;
+	border-radius: 0.6em;
+	border-width: 0.2em;
+	padding: 0.8em 0 0.8em 0;
+
+	box-shadow: -1em 1em 1em -1em rgba(27, 27, 27, 0.3) inset;
+}
+
+.end_users .allUsers_inLobby::-webkit-scrollbar {
+	display: none;
+}
+
+/* .end_users_shadow {
+	z-index: 999999;
+	position: relative;
+	box-shadow: -1em 0em 1em 2em rgba(27, 27, 27, 0.3) inset;	
+} */
+
+.points {
+	margin-left: 3em;
+	margin-top: 0em;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	font-size: 2em;
+	align-items: left;
+}
+
+.pointsLooser{
+	margin-left: 0.5em;
+	margin-top: 0.2em;
+	color: rgb(255, 255, 255);
+	font-weight: bold;
+	font-size: 1em;
+	align-items: left;
+}
+
+.user_inEndscreen .user_inLobby {
+	margin-bottom: 0em;
+	margin-right: 0.25em;
+	margin-left: 0.25em;
+
+	border: 3px solid #E08631;
+	max-height: 3em;
+
+	border-radius: 50px 10px 10px 50px;
+	border-left: none;
+}
+
+.user_inEndscreen .user_inLobby p{
+	font-size: 1em;
+	min-width: 4em; 
+}
+
+
+.user_inEndscreen .user_inLobby img{ 
+	width: 3em;
+	height: 3em;
+	border-radius: 50%;
+	border: 3px solid #E08631;
+}
+
+.end_page_right {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+
+.download_button button {
+	margin-top: 2.5em;
+	margin-right: 33%;
+	margin-left: 33%;
+	border-radius: 50%;
+	max-width: 5em;
+	max-height: 5em;
+}
+
+.download_button button img {
+	width: 4em;
+	height: 4em;
+}
+
+.end_buttons{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	margin-bottom: 2em;
+	
+	margin-left: 10%;
+}
+
+.end_button {
+	background: rgba(244, 244, 244, 1);
+	padding-top: 0.25em;
+	padding-bottom: 0.25em;
+	margin: 0em 0em 2em 0em;
+	
+	border-radius: 10px;
+	border-style: none;
+	background-color: #E08631;
+	color: rgb(255, 255, 255);
+	
+	font-size: 1.5em;
+	box-shadow: 0.5em 0.5em 0.5em rgba(0, 0, 0, 0.25);
+
+	min-width: 90%;
+	max-width: 90%;
+}
+
+.end_button:hover {
+	transform: scale(1.05);
+	transition: transform .3s;
+}
+
+.end_button:active {
+	transform: scale(1);
+	transition: transform .2s;
+	background: rgba(243, 243, 243, 1);
+
+	box-shadow: 0.5em 0.5em 0.5em rgba(100, 100, 100, 0.1) inset, -0.5em -0.5em 0.5em rgba(255, 255, 255, 0.1) inset;
+}

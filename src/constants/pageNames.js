@@ -1,0 +1,6 @@
+export const HOME_PAGE = 'main'
+export const ROOM_PAGE = 'room'
+export const ROOM_SETTINGS = 'settings'
+export const ROOM_HOST = 'room_host'
+export const GAME_PAGE = 'game_page'
+export const GAME_END_PAGE = 'game_end_page'
