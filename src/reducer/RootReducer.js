@@ -32,12 +32,6 @@ function rootReducer(state = initialState, action) {
 			}
 
 		case NavigationActions.SWITCH_TO_PAGE:
-		
-			console.log("> SWITCH TO PAGE REDUCER PREVPAGE: ")
-			console.log(action.payload.previousPage)
-			console.log("> SWITCH TO PAGE REDUCER CURRENTPAGE: ")
-			console.log(action.payload.currentPage)
-			console.log("> SWITCH TO PAGE REDUCER GAME: ")
 			// console.log(this.state.game)
 			return {
 				...state,
