@@ -77,14 +77,4 @@ function rootReducer(state = initialState, action) {
 
 };
 
-// import NavigationReducer from "./NavigationReducer";
-// import UserdataReducer from "./UserdataReducer";
-// import { combineReducers } from 'redux';
-// // import initialState from "./initialState";
-
-// const rootReducer = combineReducers(/*state = initialState,*/ {
-// 	NavigationReducer,
-// 	UserdataReducer
-// });
-
 export default rootReducer;

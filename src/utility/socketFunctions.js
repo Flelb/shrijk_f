@@ -88,9 +88,9 @@ export function join(data, roomcode, callback) {
 	})
 }
 
-export function leave() {
-	clientsocket.emit('leave_room')
-}
+// export function leave() {
+// 	clientsocket.emit('leave_room')
+// }
 
 export function status() {
 	clientsocket.emit('status')

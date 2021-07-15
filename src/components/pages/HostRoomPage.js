@@ -59,12 +59,11 @@ class HostRoomPage extends Component {
 
 		if (id === 'startGame') {
 			console.log('DEBUG: pressed on start room')
-			//aktuellevotes()
-			//voted Game in sf.start_game statt "pyp"
+
 			if (this.state.userList) {
-				if (this.state.userList.length >= 2) sf.start_game(this.state.roomID)
+				if (this.state.userList.length >= 3) sf.start_game(this.state.roomID)
 			} else {
-				alert("ERROR! It's dangerous to go alone.")
+				alert("ATTENTION! Bring more friends to play.")
 			}
 		}
 		let id_split = id.split('_')

@@ -5,7 +5,6 @@ import * as navi from '../../actions/NavigationActions'
 import logo from '../../layout/img/logo.png'
 import backbtn from '../../layout/img/zur_vorherigen_Seite.png'
 
-var sf = require('../../utility/socketFunctions.js')
 var page = require('../../constants/pageNames')
 
 const mapStateToProps = state => {
@@ -32,30 +31,7 @@ class Header extends Component {
 		const { getSwitchToRoomSettingsAction } = this.props
 		const { getSwitchToHostRoomAction } = this.props
 
-		sf.leave()
-		console.log('DEBUG: pressed on the homepage link')
-		getSwitchToHomePageAction()
-
-		// if (id === 'headerlogo') {
-		// } else {
-		// 	console.log('DEBUG: pressed on the back button')
-		// 	switch (this.state.previousPage) {
-		// 		case page.HOME_PAGE:
-		// 			getSwitchToHomePageAction()
-		// 			break
-		// 		case page.ROOM_PAGE:
-		// 			getSwitchToRoomPageAction(this.state.roomID, this.state.currentPage)
-		// 			break
-		// 		case page.ROOM_SETTINGS:
-		// 			getSwitchToRoomSettingsAction(this.state.roomID, this.state.currentPage)
-		// 			break
-		// 		case page.ROOM_HOST:
-		// 			getSwitchToHostRoomAction(this.state.currentPage)
-		// 			break
-		// 		default:
-		// 			return
-		// 	}
-		// }
+		window.location.reload()
 	}
 
 	render() {
