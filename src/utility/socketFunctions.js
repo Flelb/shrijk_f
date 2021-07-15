@@ -140,14 +140,3 @@ export function sl_vote(roomcode, choice, callback) {
 export function sl_fetch(roomcode, game) {
 	clientsocket.emit('sl_fetch', roomcode, game)
 }
-
-// export function getUsers(roomcode, callback) {
-//     // Richtiger Code:
-//     // clientsocket.emit('getUsers', roomcode, response => {
-//     //     callback(response)
-//     // })
-
-//     // Erstmal nur um im Backend den console.log() zu triggern,
-//     // Um sich das Format der Daten dort anschauen zu können
-//     clientsocket.emit('getUsers', roomcode, response => {})
-// }
