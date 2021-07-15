@@ -12,16 +12,9 @@ import { getUpdateGameObjectAction } from '../actions/GameActions.js'
 import { getUpdateGameAction } from '../actions/GameActions.js'
 
 var page = require('../constants/pageNames')
-const clientsocket = io('https://shrijk-backend.herokuapp.com/'
-// , {
-// 	withCredentials: true,
-// 	extraHeaders: {
-// 		"frontend-header": "frontend"
-// 	}
-// }
-)
+const clientsocket = io('https://shrijk-backend.herokuapp.com/')
 
-clientsocket.origins('*:*')
+// clientsocket.origins('*:*')
 
 clientsocket.on('connect', () => {
 	console.log(' > FE LISTENER: CONNECTED on id: ' + clientsocket.id)
