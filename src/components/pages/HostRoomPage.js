@@ -58,8 +58,6 @@ class HostRoomPage extends Component {
 		const { getSwitchToGamePageAction } = this.props
 
 		if (id === 'startGame') {
-			console.log('DEBUG: pressed on start room')
-
 			if (this.state.userList) {
 				if (this.state.userList.length >= 3) sf.start_game(this.state.roomID)
 			} else {
@@ -92,14 +90,12 @@ class HostRoomPage extends Component {
 			card.style.background = blue
 			cardheader.style.background = blue
 			cardheader.style.borderColor = blue
-			console.log('new vote')
 		} else {
 			//remove mark on gameCard
 			card.style.borderColor = orange
 			card.style.background = orange
 			cardheader.style.background = orange
 			cardheader.style.borderColor = orange
-			console.log('old vote')
 		}
 	}
 
@@ -134,8 +130,6 @@ class HostRoomPage extends Component {
 				console.log('An Error occured while trying to display the UserList')
 			}
 		}
-
-		// console.log('listing users')
 		return userArray
 	}
 

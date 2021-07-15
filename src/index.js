@@ -17,9 +17,6 @@ ReactDOM.render(
 	<Provider store={store}>
 		<script src="../src/utility/socketFunctions.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
-		{/* <script>
-      const socket = io();
-    </script> */}
 		<App />
 	</Provider>,
 	document.getElementById('root')

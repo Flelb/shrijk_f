@@ -34,7 +34,6 @@ class BirdPopup extends Component {
 			color = this.state.userAvatar.bird_color
 			mood = this.state.userAvatar.bird_mood
 		}
-		// console.log("color: " + color + " mood: " + mood);
 		this.setState({ userAvatar: { bird_color: color, bird_mood: mood } }, () => {
 			const { getEnterBirdCredentialsAction } = this.props
 			getEnterBirdCredentialsAction(this.state.userAvatar)

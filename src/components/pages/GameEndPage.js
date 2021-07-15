@@ -57,8 +57,6 @@ class GameEndPage extends Component {
         this.state.userList.sort( (u01, u02) => {
             return u02.points - u01.points
         })
-
-        console.log(this.state.userList[1])
     }
 
 	updateUserListView(userList) {
@@ -85,7 +83,6 @@ class GameEndPage extends Component {
 			)
 		}
 
-		// console.log("listing users");
 		return <ul className="allUsers_inLobby">{userArray}</ul>
 	}
 

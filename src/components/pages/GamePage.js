@@ -51,8 +51,6 @@ class GamePage extends Component {
 				</li>
 			)
 		}
-
-		// console.log("listing users");
 		return <ul className="allUsers_inLobby">{userArray}</ul>
 	}
 	
@@ -60,7 +58,6 @@ class GamePage extends Component {
 		let content = <></>
 		let ul = <></>
 		let gameTitle = ''
-		console.log(this.state.game)
 		switch(this.state.game) {
 		    case "pyp":
 		        content = <PickYourPoisonPage />

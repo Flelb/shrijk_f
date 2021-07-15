@@ -6,8 +6,6 @@ import initialState from "./initialState";
 
 function rootReducer(state = initialState, action) {
 
-	console.log("REDUCER: " + action.type)
-
 	switch (action.type) {
 
 		case UserdataActions.ENTER_BIRD_CREDENTIALS:

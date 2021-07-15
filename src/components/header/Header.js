@@ -35,8 +35,6 @@ class Header extends Component {
 	}
 
 	render() {
-		// variables and logic here
-		// console.log("prev: " + this.state.previousPage);
 		return (
 			<>
 				<header>

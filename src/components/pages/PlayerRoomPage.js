@@ -36,10 +36,8 @@ class PlayerRoomPage extends Component {
 			avatar: this.state.userAvatar
 		}
 
-		console.log('RoomID: ' + this.state.roomID)
 		sf.join(userdata, this.state.roomID, res => {
 			if (res.failed) {
-				console.log('INVALID ROOM CODE')
 				alert(res.answer)
 				const { getSwitchToHomePageAction } = this.props
 				getSwitchToHomePageAction()
@@ -83,14 +81,12 @@ class PlayerRoomPage extends Component {
 			card.style.background = blue
 			cardheader.style.background = blue
 			cardheader.style.borderColor = blue
-			console.log('new vote')
 		} else {
 			//remove mark on gameCard
 			card.style.borderColor = orange
 			card.style.background = orange
 			cardheader.style.background = orange
 			cardheader.style.borderColor = orange
-			console.log('old vote')
 		}
 	}
 
@@ -124,8 +120,6 @@ class PlayerRoomPage extends Component {
 				console.log('An Error occured while trying to display the UserList')
 			}
 		}
-
-		// console.log('listing users')
 		return userArray
 	}
 

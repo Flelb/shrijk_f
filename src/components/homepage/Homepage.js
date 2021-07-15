@@ -32,20 +32,17 @@ class Homepage extends Component {
 	}
 
 	handleChange(e) {
-		// console.log(this.state);
 		const { value, id } = e.target
 
 		if (id === 'username') {
 			this.setState({ userID: value }, () => {
 				const { getEnterUsernameAction } = this.props
 				getEnterUsernameAction(this.state.userID)
-				// console.log(this.state);
 			})
 		} else if (id === 'roomcode') {
 			this.setState({ roomID: value.toUpperCase() }, () => {
 				const { getEnterRoomIDAction } = this.props
 				getEnterRoomIDAction(this.state.roomID)
-				// console.log(this.state);
 			})
 		}
 	}
@@ -58,7 +55,6 @@ class Homepage extends Component {
 		const { getEnterRoomIDAction } = this.props
 
 		if (id === 'host') {
-			console.log('DEBUG: pressed on host room')
 			try {
 				if (this.state.userID.length >= 1) {
 					const { getSwitchToHostRoomAction } = this.props
@@ -71,7 +67,6 @@ class Homepage extends Component {
 		} else if (id === 'join') {
 			const { getEnterRoomIDAction } = this.props
 			getEnterRoomIDAction(this.state.roomID)
-			console.log('DEBUG: pressed on join room')
 			try {
 				if (this.state.roomID.length === 4 && this.state.userID.length >= 1) {
 					const { getSwitchToRoomPageAction } = this.props

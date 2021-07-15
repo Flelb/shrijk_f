@@ -8,7 +8,6 @@ import store from '../../index.js'
 var images = require('../../utility/image_library')
 var allBirds = images.birbs
 
-// var page = require("../../constants/pageNames");
 var sf = require('../../utility/socketFunctions.js')
 
 const mapStateToProps = state => {
@@ -34,8 +33,6 @@ class PickYourPoisonPage extends Component {
 			u_name: this.state.userID,
 			u_avatar: this.state.userAvatar
 		}
-
-		// sf.pyp_fetch(this.state.roomID, 'pyp');
 
 		this.handleClick = this.handleClick.bind(this)
 		this.stateUpdater = this.stateUpdater.bind(this)
@@ -63,13 +60,10 @@ class PickYourPoisonPage extends Component {
 					}
 				}
 			} catch {
-				console.log("Tried resetting the button colors, but it wasn't possible")
 			}
 			templocalstate.currentGameObject = globalstore.currentGameObject
 		}
 		if (templocalstate.userList !== globalstore.userList) {
-			console.log(":: stateUpdater: UserList (stinky)");
-			console.log(globalstore.userList);
 			templocalstate.userList = globalstore.userList
 		}
 		this.setState(templocalstate)
@@ -198,9 +192,6 @@ class PickYourPoisonPage extends Component {
 				let altdescription = 'User Icon of color ' + user.avatar.bird_color + ' with the mood ' + user.avatar.bird_mood + ''
 				let likey = 'User_inLobby_' + user.name
 				let voted_class = (user.newVote) ? "user_inLobby_voted" : "user_inLobby"
-				// let voted_class = "user_inLobby"
-				// console.log("USER IN LIST HAS THIS VOTE: ")
-				// console.log(user.newVote)
 				
 				userArray.push(
 					<li key={likey} className={voted_class}>
@@ -215,7 +206,6 @@ class PickYourPoisonPage extends Component {
 			}
 		}
 
-		// console.log('listing users')
 		return userArray
 	}
 
@@ -224,7 +214,6 @@ class PickYourPoisonPage extends Component {
 		const { id } = e.target
 
 		if(id === "pyp_resume") {
-			// console.log("FRONNENN PYP RESUME JAJAJAJAJAJAJJAJ")
 
 			if (this.state.currentGameObject.data["pyp_over"]) {
 				sf.end_game(this.state.roomID)
@@ -239,19 +228,15 @@ class PickYourPoisonPage extends Component {
 		if (this.state.currentGameObject.type == "pyp_round_over") return
 
 		if (id === 'pypChoice_A') {
-			console.log('vote A')
 			sf.pyp_vote(this.state.roomID, 'A', response => {
 				this.changeButtonColor(e.target, response.newVote)
 			})
-			// sf.pyp_fetch(this.state.roomID, 'pyp'); // only for debugging
 		}
 
 		if (id === 'pypChoice_B') {
-			console.log('vote B')
 			sf.pyp_vote(this.state.roomID, 'B', response => {
 				this.changeButtonColor(e.target, response.newVote)
 			})
-			// sf.pyp_fetch(this.state.roomID, 'pyp'); // only for debugging
 		}
 	}
 
@@ -265,11 +250,9 @@ class PickYourPoisonPage extends Component {
 			}
 
 			elem.style.background = blue
-			console.log('new vote')
 		} else {
 			//remove mark on gameCard
 			elem.style.background = orange
-			console.log('old vote')
 		}
 	}
 

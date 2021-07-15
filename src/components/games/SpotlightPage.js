@@ -8,7 +8,6 @@ import store from '../../index.js'
 var images = require('../../utility/image_library')
 var allBirds = images.birbs
 
-// var page = require("../../constants/pageNames");
 var sf = require('../../utility/socketFunctions.js')
 
 const mapStateToProps = state => {
@@ -34,8 +33,6 @@ class SpotlightPage extends Component {
 			u_name: this.state.userID,
 			u_avatar: this.state.userAvatar
 		}
-
-		// sf.sl_fetch(this.state.roomID, 'sl');
 
 		this.handleClick = this.handleClick.bind(this)
 		this.stateUpdater = this.stateUpdater.bind(this)
@@ -68,8 +65,6 @@ class SpotlightPage extends Component {
 			templocalstate.currentGameObject = globalstore.currentGameObject
 		}
 		if (templocalstate.userList !== globalstore.userList) {
-			console.log(":: stateUpdater: UserList (stinky)");
-			console.log(globalstore.userList);
 			templocalstate.userList = globalstore.userList
 		}
 		this.setState(templocalstate)
@@ -102,21 +97,15 @@ class SpotlightPage extends Component {
 		if (!cgo || cgo.type != "sl_round_over") return
 		
 		// initializing stuff
-		console.log("GENERATING RESULTS> HIER LIESTE: ")
 		let all_matched = cgo.data["log_map_matched"]
-		console.log(all_matched)
 		let all_unmatched = cgo.data["log_map_unmatched"]
-		console.log(all_unmatched)
 		let were_matched = false;
 		let you = { "name": "default", "avatar": { "bird_color": "bi", "bird_mood": "sleepy"}}
 			
 		// trying to find ourselves, in order to see if we have won
 		you = this.findMeInList(all_matched)
-		console.log(you)
 		were_matched = (you) ? true : false
-		console.log(you)
 		you = (you) ? you : this.findMeInList(all_unmatched)
-		console.log(you)
 		// we need to know who we are, even if we lose sometimes
 
 		// preparing some data for the display
@@ -162,8 +151,6 @@ class SpotlightPage extends Component {
 				console.log('An Error occured while trying to display the UserList')
 			}
 		}
-
-		// console.log('listing users')
 		return userArray
 	}
 
@@ -183,7 +170,6 @@ class SpotlightPage extends Component {
 		}
 		
 		if (this.state.currentGameObject.type == "sl_round_over") return
-		console.log("USER IS: " + e.target.getAttribute("data-user"))
         sf.sl_vote(this.state.roomID, e.target.getAttribute("data-user"), response => {
 			
 			// Maybe this doesn't have to be in the callback, due to possible lag.
@@ -212,11 +198,9 @@ class SpotlightPage extends Component {
 			}
 
 			elem.style.background = blue
-			console.log('new vote')
 		} else {
 			//remove mark on gameCard
 			elem.style.background = orange
-			console.log('old vote')
 		}
 	}
 
