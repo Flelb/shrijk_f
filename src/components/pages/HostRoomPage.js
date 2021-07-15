@@ -59,9 +59,11 @@ class HostRoomPage extends Component {
 
 		if (id === 'startGame') {
 			if (this.state.userList) {
-				if (this.state.userList.length >= 3) sf.start_game(this.state.roomID)
-			} else {
-				alert("ATTENTION! Bring more friends to play.")
+				if (this.state.userList.length >= 3) { 
+					sf.start_game(this.state.roomID)
+				} else {
+					alert("ATTENTION! Bring more friends to play.")
+				}
 			}
 		}
 		let id_split = id.split('_')
